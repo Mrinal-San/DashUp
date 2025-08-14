@@ -1,0 +1,87 @@
+/* General body styling */
+body {
+    background-image: url("/static/img/waguri.gif");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Merriweather', serif;
+    color: #2c2c2c;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+h1,h5{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Overlay effect */
+.herosection {
+    background: rgba(255, 255, 255, 0.75); /* Semi-transparent white */
+    text-align: center;
+    padding: 80px 20px;
+    margin: 120px auto;
+    max-width: 700px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading styles */
+.herosection h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #2c2c2c;
+}
+
+.herosection h5 {
+    font-weight: 300;
+    margin-bottom: 30px;
+    color: #000000;
+}
+
+/* Buttons */
+.button {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.button button {
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button button:hover {
+    background: #ffdb00;
+    color: black;
+    transform: translateY(-2px);
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    .herosection {
+        padding: 50px 15px;
+        margin: 20px;
+    }
+
+    .herosection h1 {
+        font-size: 2rem;
+    }
+
+    .button {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+

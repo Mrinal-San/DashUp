@@ -1,0 +1,163 @@
+body {
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Navbar container */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffdb00;
+  padding: 0.8rem 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo container */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  border-radius: 10px;
+}
+
+/* Shine effect */
+.logo::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.6) 50%,
+      rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-20deg);
+}
+
+.logo:hover::after {
+  animation: shine 0.8s ease forwards;
+}
+
+@keyframes shine {
+  100% {
+    left: 125%;
+  }
+}
+
+/* Navigation links */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: black;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #444;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Auth buttons */
+.auth-buttons {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.auth-buttons a {
+  padding: 0.5rem 1.2rem;
+  border: 2px solid black;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition:
+      background-color 0.3s ease,
+      color 0.3s ease,
+      transform 0.25s ease,
+      box-shadow 0.3s ease;
+}
+
+.auth-buttons a:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.login-btn {
+  background-color: transparent;
+  color: black;
+}
+
+.login-btn:hover {
+  background-color: black;
+  color: #ffdb00;
+}
+
+.register-btn {
+  background-color: black;
+  color: #ffdb00;
+}
+
+.register-btn:hover {
+  background-color: #ffdb00;
+  color: black;
+}
+
+.auth-buttons a:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .logo img {
+    height: 32px; /* smaller logo on mobile */
+  }
+}

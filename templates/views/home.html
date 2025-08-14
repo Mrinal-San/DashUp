@@ -1,0 +1,47 @@
+
+{% extends "views/base.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/home.css')}}">
+<style>
+  body {
+    background-image: url("/static/img/waguri.gif");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Merriweather', serif; /* Elegant readable font */
+    color: #2c2c2c; /* Good contrast */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+</style>
+
+<body>
+
+    <section class="herosection">
+      {% if user %}
+      <h1>
+        Welcome, {{user}}
+      </h1>
+      {% else %}
+      <h1>
+        Welcome, Guest
+      </h1>
+      {% endif %}
+      <h5>welcome to DashUp you personal task and finance managment website</h5>
+
+      <div class="button">
+        <button class="finances-btn">
+          <a href="/finance">Finances</a> 
+        </button>
+        <button class="tasks-btn">
+          <a href="/task">Tasks</a> 
+        </button>
+      </div>
+    </section>
+
+</body>
+</html>
+
+{% endblock %}

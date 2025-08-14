@@ -1,0 +1,101 @@
+body {
+    background-image: url("/static/img/waguri.gif");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Merriweather', serif;
+    color: #2c2c2c;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main container */
+.task-page {
+    max-width: 700px;
+    margin: 120px auto;
+    padding: 20px;
+    background: #ffdb00;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    font-family: Arial, sans-serif;
+}
+
+/* Page title */
+.task-page h1 {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Task entry form */
+.task-page form {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.task-page input[type="text"] {
+    flex: 1;
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.task-page button {
+    padding: 8px 16px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s ease;
+}
+
+.task-page button:hover {
+    background-color: #555;
+}
+
+/* Table styling */
+.task-page table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 6px;
+    overflow: hidden;
+    background: white;
+}
+
+.task-page th,
+.task-page td {
+    padding: 10px;
+    border-bottom: 1px solid #f0f0f0;
+    text-align: left;
+}
+
+.task-page th {
+    background: #f7f7f7;
+    font-weight: 600;
+    font-size: 14px;
+    color: #555;
+}
+
+.task-page td {
+    font-size: 14px;
+    color: #444;
+}
+
+/* Hover effect for rows */
+.task-page tr:hover {
+    background: #fafafa;
+}
+
+/* No task placeholder row */
+.task-page td[colspan] {
+    text-align: center;
+    font-style: italic;
+    color: #888;
+}
