@@ -16,7 +16,7 @@ body {
     max-width: 700px;
     margin: 120px auto;
     padding: 20px;
-    background: #ffdb00;
+    background: rgba(255, 219, 0, 0.75);
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     font-family: Arial, sans-serif;

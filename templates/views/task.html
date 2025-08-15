@@ -1,41 +1,65 @@
 {% extends 'views/base.html' %}
 
 {% block content %}
-<link rel="stylesheet" href="{{url_for('static',filename='css/task.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/task.css') }}" />
 
 <div class="task-page">
+  <h1>📝 To-Do List</h1>
 
-    <h1>📝 To-Do List</h1>
+  <!-- Task Entry Form -->
+  <form action="{{ url_for('task.add_task') }}" method="POST">
+    <input
+      type="text"
+      name="task_name"
+      placeholder="Enter a new task..."
+      required
+    />
+    <button type="submit">Add</button>
+  </form>
 
-    <!-- Task Entry Form -->
-    <form method="POST">
-        <input type="text" name="task" placeholder="Enter a new task..." required>
-        <button type="submit">Add</button>
-    </form>
-
-    <!-- Task Display Table -->
-    <table>
-        <thead>
-            <tr>
-                <th>Done</th>
-                <th>#</th>
-                <th>Task</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for task in my_tasks %}
-            <tr>
-                <td><input type="checkbox" class="task-check"></td>
-                <td>{{ loop.index }}</td>
-                <td class="task-text">{{ task }}</td>
-                <td><button>remove</button></td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-
+  <!-- Task Display Table -->
+  <table>
+    <thead>
+      <tr>
+        <th>Done</th>
+        <th>Sr.no</th>
+        <th>Task</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if my_tasks %}
+        {% for task in my_tasks %}
+          <tr>
+            <td>
+              <input 
+                type="checkbox" 
+                class="task-check" 
+                data-task-id="{{ task[0] }}"
+                {% if task[2] == 1 %}checked{% endif %}
+              >
+            </td>
+            <td>{{ loop.index }}</td>
+            <td class="task-text">{{ task[1] }}</td>
+            <td>
+              <form action="{{ url_for('task.delete_task', task_id=task[0]) }}" method="POST" style="display:inline;">
+                <button type="submit">Remove</button>
+              </form>
+            </td>
+          </tr>
+        {% endfor %}
+      {% else %}
+        <tr>
+          <td></td>
+          <td>0</td>
+          <td class="task-text">No-Task Available</td>
+          <td></td>
+        </tr>
+      {% endif %}
+    </tbody>
+  </table>
 </div>
-<!-- Link JavaScript correctly -->
-<script src="{{ url_for('static', filename='js/task.js') }}"></script>
+
+<script src="{{url_for('static',filename='js/task.js')}}">
+</script>
 {% endblock %}

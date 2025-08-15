@@ -1,6 +1,15 @@
 from flask import Flask, render_template, redirect, url_for
+from task import task_bp  #importing the task module
+import dbconfig  #importing the database configuration
+
 
 app = Flask(__name__)
+
+#creating a table using the module(dbconfig)
+dbconfig.create_table()
+
+#register the task.py
+app.register_blueprint(task_bp)
 
 @app.route("/")
 def home():
@@ -10,11 +19,6 @@ def home():
 @app.route("/finance")
 def finance_home():
     return render_template("views/finance.html")
-
-@app.route("/task")
-def task_home():
-    tasks=['workout','meditation','homework']
-    return render_template("views/task.html",my_tasks=tasks)
     
-if __name__ ==("__main__"):
+if __name__ =="__main__":
     app.run(debug=True)

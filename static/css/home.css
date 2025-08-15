@@ -21,7 +21,7 @@ h1,h5{
     background: rgba(255, 255, 255, 0.75); /* Semi-transparent white */
     text-align: center;
     padding: 80px 20px;
-    margin: 120px auto;
+    margin: 100px auto;
     max-width: 700px;
     border-radius: 12px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
@@ -58,16 +58,20 @@ h1,h5{
     transition: all 0.3s ease;
 }
 
+a{
+    text-decoration: none;
+    color: white;
+}
+
+
+
+
 .button button:hover {
     background: #ffdb00;
-    color: black;
     transform: translateY(-2px);
 }
 
-a{
-    text-decoration: none;
-    color: #fff;
-}
+
 /* Mobile responsiveness */
 @media (max-width: 600px) {
     .herosection {
