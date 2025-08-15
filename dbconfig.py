@@ -12,7 +12,8 @@ def create_table():
             CREATE TABLE IF NOT EXISTS tasks(
                 task_id INTEGER PRIMARY KEY AUTOINCREMENT,
                 task_name TEXT NOT NULL,
-                is_done INTEGER NOT NULL DEFAULT 0
+                is_done INTEGER NOT NULL DEFAULT 0,
+                last_updated DATE
             )
         ''')
         conn.commit()
