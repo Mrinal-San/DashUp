@@ -5,8 +5,8 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    font-family: 'Merriweather', serif;
-    color: #2c2c2c;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #000000;
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -18,20 +18,21 @@ h1,h5{
 
 /* Overlay effect */
 .herosection {
-    background: rgba(255, 255, 255, 0.75); /* Semi-transparent white */
+    background: rgba(255, 255, 255,0.5); /* Semi-transparent white */
     text-align: center;
     padding: 80px 20px;
     margin: 100px auto;
     max-width: 700px;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 10px 10px rgba(0, 0, 0);
+    border-radius: 20px;
+    border: 5px, solid black;
 }
 
 /* Heading styles */
 .herosection h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
-    color: #2c2c2c;
+    color: #000000;
 }
 
 .herosection h5 {
@@ -44,11 +45,11 @@ h1,h5{
 .button {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 25px;
 }
 
 .button button {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0);
     color: #fff;
     padding: 12px 25px;
     border: none;
@@ -56,19 +57,18 @@ h1,h5{
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
+    border: solid 2px black;
 }
 
 a{
-    text-decoration: none;
+    text-decoration: solid ;
     color: white;
 }
 
-
-
-
 .button button:hover {
-    background: #ffdb00;
-    transform: translateY(-2px);
+    background: #ffffff;
+    color: black;
+    border: solid 2px black;
 }
 
 

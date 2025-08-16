@@ -1,0 +1,72 @@
+
+h2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+/* Dashboard Container */
+.dashboard-stats {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.dashboard-stats div {
+  background: #ffffff;
+  border-radius: 10px;
+  border: solid 5px;
+  padding: 20px;
+  text-align: center;
+  width: 180px;
+  margin: 10px;
+  box-shadow: 10px 10px rgba(0,0,0);
+  transition: transform 0.3s ease;
+}
+
+.dashboard-stats div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0,0,0);
+}
+
+.dashboard-stats p:first-child {
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.dashboard-stats p:last-child {
+  font-size: 1.5em;
+  color: #000000;
+}
+
+/* Progress Bar */
+.progress-bar-container {
+  width: 100%;
+  max-width: 600px;
+  background: #eee;
+  height: 30px;
+  border-radius: 20px;
+  margin: 30px auto;
+  border: solid 5px;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0;
+  background: #000000;
+  text-align: center;
+  color: white;
+  line-height: 30px;
+  font-weight: bold;
+  border-radius: 15px ;
+  transition: width 1.5s ease-in-out;
+}
+
+/* Chart Canvas */
+#taskChart {
+  max-width: 600px;
+  margin: 30px auto;
+  display: block;
+}

@@ -8,9 +8,9 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #ffdb00;
+  background-color: #ffffff;
   padding: 0.8rem 2rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid black;
 }
 
 /* Logo container */
@@ -92,7 +92,7 @@ nav {
 
 .nav-links a:hover {
   color: #000000;
-  text-shadow: 0px 0px 5px rgb(17, 0, 255);}
+}
 
 .nav-links a:hover::after {
   width: 100%;
@@ -110,6 +110,7 @@ nav {
   border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   transition:
       background-color 0.3s ease,
       color 0.3s ease,
@@ -122,29 +123,20 @@ nav {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.login-btn {
+.login-btn,.register-btn {
   background-color: transparent;
   color: black;
 }
 
-.login-btn:hover {
+.login-btn:hover,.register-btn:hover {
   background-color: black;
-  color: #ffdb00;
-}
-
-.register-btn {
-  background-color: black;
-  color: #ffdb00;
-}
-
-.register-btn:hover {
-  background-color: #ffdb00;
-  color: black;
+  color: #ffffff;
 }
 
 .auth-buttons a:active {
   transform: scale(0.97);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+
 }
 
 /* Responsive design */
