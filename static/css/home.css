@@ -1,0 +1,91 @@
+/* General body styling */
+body {
+    background-image: url("/static/img/");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #000000;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+h1,h5{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Overlay effect */
+.herosection {
+    background: rgba(255, 255, 255,0.5); /* Semi-transparent white */
+    text-align: center;
+    padding: 80px 20px;
+    margin: 100px auto;
+    max-width: 700px;
+    box-shadow: 10px 10px rgba(0, 0, 0);
+    border-radius: 20px;
+    border: 5px, solid black;
+}
+
+/* Heading styles */
+.herosection h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+.herosection h5 {
+    font-weight: 300;
+    margin-bottom: 30px;
+    color: #000000;
+}
+
+/* Buttons */
+.button {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.button button {
+    background: rgba(0, 0, 0);
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: solid 2px black;
+}
+
+a{
+    text-decoration: solid ;
+    color: white;
+}
+
+.button button:hover {
+    background: #ffffff;
+    color: black;
+    border: solid 2px black;
+}
+
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    .herosection {
+        padding: 50px 15px;
+        margin: 20px;
+    }
+
+    .herosection h1 {
+        font-size: 2rem;
+    }
+
+    .button {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+

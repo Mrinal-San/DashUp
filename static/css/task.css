@@ -1,0 +1,131 @@
+/* Main container */
+.task-page {
+    max-width: 700px;
+    margin: 120px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255,0.5);
+    border-radius: 10px;
+    border: 5px solid black;
+    box-shadow: 10px 10px rgba(0, 0, 0);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Page title */
+.task-page h1 {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #000000;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Task entry form */
+.task-page form {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.task-page input[type="text"] {
+    flex: 1;
+    padding: 8px 10px;
+    border: 2px solid #000000;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.task-page button {
+    padding: 8px 16px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s ease;
+}
+
+.task-page button:hover {
+    background-color: #000000;
+}
+
+/* Table styling */
+.task-page table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 5px;
+    overflow: hidden;
+    background: white;
+}
+
+.task-page th,
+.task-page td {
+    padding: 10px;
+    border-bottom: 1px solid #ffffff;
+    text-align: left;
+}
+
+.task-page th {
+    background: #ffffff;
+    font-weight: 600;
+    font-size: 14px;
+    color: #000000;
+    border: solid 2px black;
+}
+
+.task-page td {
+    font-size: 14px;
+    color: #000000;
+    border: solid 1px black;
+}
+
+/* Hover effect for rows */
+.task-page tr:hover {
+    background: #ffffff;
+}
+
+/* No task placeholder row */
+.task-page td[colspan] {
+    text-align: center;
+    font-style: italic;
+    color: #000000;
+}
+
+/* Hide the default checkbox */
+.task-check {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #000000;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #ffffff;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+/* On hover */
+.task-check:hover {
+    background-color: #f0f0f0;
+}
+
+/* Checked state */
+.task-check:checked {
+    background-color: #000000;
+    border-color: #000000;
+}
+
+/* Add a white checkmark when checked */
+.task-check:checked::after {
+    content: "✓";
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+}

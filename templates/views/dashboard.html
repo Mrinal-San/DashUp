@@ -1,0 +1,70 @@
+{% extends 'views/base.html' %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<h2>Task Completion</h2>
+<canvas id="taskChart" width="400" height="200"></canvas>
+<script>
+    const ctx = document.getElementById('taskChart').getContext('2d');
+
+const data = {
+    labels: ['Completed', 'Pending'],
+    datasets: [{
+        label: 'Tasks',
+        data: [{{ completed }}, {{ pending }}],
+        backgroundColor: [
+            'rgba(0, 0, 0, 1)',   // Black
+            'rgba(255, 255, 255, 1)' // White
+        ],
+        borderColor: [
+            'rgba(0, 0, 0, 1)',   // Black outline for Completed
+            'rgba(0, 0, 0, 1)'    // Black outline for Pending
+        ],
+        borderWidth: 2 // Makes the outline clearly visible
+    }]
+};
+
+
+    const config = {
+        type: 'doughnut',
+        data: data,
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { position: 'bottom' },
+                title: { display: true, text: 'Daily Task Completion' }
+            }
+        },
+    };
+
+    const taskChart = new Chart(ctx, config);
+</script>
+
+<h2>Daily Dashboard</h2>
+
+<div class="dashboard-stats">
+    <div>
+        <p>Total Tasks</p>
+        <p>{{ total }}</p>
+    </div>
+    <div>
+        <p>Completed</p>
+        <p>{{ completed }}</p>
+    </div>
+    <div>
+        <p>Pending</p>
+        <p>{{ pending }}</p>
+    </div>
+    <div>
+        <p>Completion %</p>
+        <p>{{ completion_percent }}%</p>
+    </div>
+</div>
+
+<div class="progress-bar-container">
+    <div class="progress-bar" style="width: {{ completion_percent }}%">{{ completion_percent }}%</div>
+</div>
+
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+{% endblock %}

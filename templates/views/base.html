@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DashUp - A dynamic and responsive web application.">
+    <title>DashUp</title>
+</head>
+<body>
+    <header>
+        <!-- Navigation Bar -->
+        {% include 'components/navbar.html' %}
+    </header>
+    <main>
+        <!-- main body -->
+         {% block content %}
+         {% endblock %}
+    </main>
+    <footer>
+        <!-- footer detail -->
+         {% include 'components/credit.html'   %}
+    </footer>
+</body>
+</html>

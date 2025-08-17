@@ -1,0 +1,8 @@
+﻿# Large binary/media files
+*.gif
+*.mp4
+*.avi
+*.mov
+*.zip
+*.rar
+*.iso

@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+
+<nav>
+    <!-- Logo (clickable, with shine animation) -->
+    <a href="/" class="logo">
+        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="DashUp Logo">
+    </a>
+
+    <!-- Center Links -->
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <!-- <a href="#">About</a>
+        <a href="#">Contact</a> -->
+        <a href="/dashboard">Dashboard</a>
+    </div>
+
+    <!-- Auth Buttons -->
+    <div class="auth-buttons">
+        <a href="/login" class="login-btn">Login</a>
+        <a href="/register" class="register-btn">Register</a>
+    </div>
+</nav>

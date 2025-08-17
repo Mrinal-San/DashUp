@@ -1,0 +1,134 @@
+/* ------------------------
+   General Body Styling
+------------------------ */
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff; /* White background */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #000; /* Black text */
+}
+
+/* ------------------------
+   Login Container
+------------------------ */
+.login-container {
+    border: 5px solid #000;
+    padding: 40px 30px;
+    width: 350px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 10px 10px rgba(0, 0, 0);
+    border-radius: 8px;
+}
+
+/* ------------------------
+   Logo
+------------------------ */
+.login-container .logo {
+    width: 200px;
+}
+
+/* ------------------------
+   Headings
+------------------------ */
+.login-container h2 {
+    margin-bottom: 10px;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.login-container .subtitle {
+    margin-bottom: 30px;
+    font-size: 14px;
+    color: #000000;
+}
+
+/* ------------------------
+   Form Styling
+------------------------ */
+.login-container .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+    font-weight: 700;
+}
+
+.login-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 12px 10px;
+    border: 2px solid #000;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #000;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border 0.2s;
+}
+
+.login-container input:focus {
+    border-color: #000000;
+    outline: none;
+}
+
+/* ------------------------
+   Links
+------------------------ */
+.login-container .form-links {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.login-container a {
+    color: #000;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s;
+}
+
+.login-container a:hover {
+    color: #000000;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+/* ------------------------
+   Button Styling
+------------------------ */
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #000;
+    background-color: #000;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.2s ease;
+}
+
+.login-container button:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* ------------------------
+   Signup Text
+------------------------ */
+.login-container .signup-text {
+    margin-top: 20px;
+    font-size: 13px;
+}
+
+.login-container .signup-text a {
+    font-weight: 600;
+}
