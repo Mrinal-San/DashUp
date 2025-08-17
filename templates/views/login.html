@@ -15,11 +15,16 @@
         <h2>Welcome back</h2>
         <p class="subtitle">Please enter your credentials to continue</p>
 
+        <!-- Error Message -->
+        {% if error %}
+          <p class="error-message">{{ error }}</p>
+        {% endif %}
+
         <!-- Login Form -->
-        <form method="POST">
+        <form action="{{ url_for('login.login_auth') }}" method="POST">
             <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <label for="user_email">Email</label>
+                <input type="email" id="user_email" name="user_email" placeholder="Enter your email" required>
             </div>
 
             <div class="form-group">

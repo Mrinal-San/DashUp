@@ -100,13 +100,19 @@ def insert_users(first_name, last_name, user_email, password_hash):
         with sqlite3.connect(db_users) as conn:
             cursor = conn.cursor()
             cursor.execute(
-                "INSERT INTO users (first_name, last_name, user_email, password_hash) VALUES (?, ?, ?, ?)",
+                """
+                INSERT INTO users (first_name, last_name, user_email, password_hash)
+                VALUES (?, ?, ?, ?)
+                """,
                 (first_name, last_name, user_email, password_hash)
             )
             conn.commit()
-        return "success"
+        return True, "User added successfully"
+
     except sqlite3.IntegrityError:
-        return "Email already registered"
+        return False, "Email already registered"
+    except Exception as e:
+        return False, f"Database error: {str(e)}"
     
 def delete_users(user_id):
     with sqlite3.connect(db_users) as conn:
@@ -122,7 +128,14 @@ def fetch_users():
         cursor.execute("SELECT * FROM users")
         return cursor.fetchall()
 
-create_users()
-print(delete_users(1))
-print(fetch_users())
 
+def get_user_by_email(user_email):
+    try:
+        with sqlite3.connect(db_users) as conn:
+            cursor = conn.cursor()
+            cursor.execute("SELECT * FROM users WHERE user_email = ?", (user_email,))
+            user = cursor.fetchone()  # returns None if not found
+        return user
+    except Exception as e:
+        print("Database error:", e)
+        return None
